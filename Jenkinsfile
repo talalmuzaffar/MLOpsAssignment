@@ -22,27 +22,4 @@ pipeline {
             }
         }
     }
-    
-    post {
-        success {
-            // Send email notification when the pipeline succeeds
-            emailext (
-                subject: 'Jenkins Pipeline Succeeded',
-                body: 'The Jenkins pipeline has succeeded. Code was pushed/merged into the master branch.',
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
-                replyTo: '',
-                to: 'malikfaizan9066@gmail.com'
-            )
-        }
-        failure {
-            // Send email notification when the pipeline fails
-            emailext (
-                subject: 'Jenkins Pipeline Failed',
-                body: 'The Jenkins pipeline has failed. Code was pushed/merged into the master branch.',
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
-                replyTo: '',
-                to: 'malikfaizan9066@gmail.com'
-            )
-        }
-    }
-}
+
